@@ -12,6 +12,7 @@ config files for the a blue-themed i3 window manager.
 	<li>i3status</li>
 	<li>rofi</li>
 	<li>i3blocks</li>
+	<li>Font-Awesome font ==> <a href="https://github.com/FortAwesome/Font-Awesome">here</a></li>
 	<li>Moka Icons ==> <a href="https://snwh.org/moka">here</a></li>
 	<li>Arc-Dark-Theme ==> <a href="https://github.com/horst3180/Arc-theme">here</a></li>
 	</ul>
