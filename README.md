@@ -23,7 +23,7 @@ config files for the a blue-themed i3 window manager.
 	<li><code>#  pacman -S i3blocks</code></li>
 	<li><ol>
 		<li>Create a folder named ".config" in your home directory.</li>
-		<li>Inside this folder, create 3 sub-directories- "i3", "i3status", "rofi".</li>
+		<li>Inside this folder, create 4 sub-directories- "i3", "i3status", "i3blocks", "rofi".</li>
 		<li>Inside each of these directories, create a file named "config" using a text editor of your choice.</li>
 		</ol>
 	<li>Unzip the downloaded file.</li>
