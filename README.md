@@ -3,7 +3,8 @@ config files for the a blue-themed i3 window manager.
 <p>
 <b>Recommendations:</b>
 	You may change the keyboard shortcuts to suit your needs.
-	I have provided configuration files for both (dmenu and roxi) && (i3status and i3blocks).
+	I have provided configuration files for both (dmenu and roxi) && (i3status and i3blocks).<br>
+	<b>You only need one from each, i.e one of dmenu/roxi and one of i3status/i3blocks</b>
 </p>
 <b>These are the dependencies for the best experience:</b>
 	<ul>
