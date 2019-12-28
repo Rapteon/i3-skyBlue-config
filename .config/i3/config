@@ -235,7 +235,7 @@ bar {
 
 
 #Lock i3 using i3lock
-bindsym $mod+Shift+x exec i3lock -c '$lockscreen-bg-color' --image=/home/jarus/Wallpapers/locked-padlock.png
+bindsym $mod+Shift+x exec i3lock -c '$lockscreen-bg-color' 
 
 #Brightness Controls
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
