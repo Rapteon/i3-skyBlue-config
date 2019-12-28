@@ -37,9 +37,10 @@
 		<li>Create a folder named ".config" in your home directory.</li>
 		<li>Inside this folder, create 4 sub-directories- "i3", "i3status", "i3blocks", "rofi".</li>
 		<li>Inside each of these directories, create a file named "config" using a text editor of your choice.</li>
+		<li>Create a ".fonts" folder in your home directory. If the folder already exists, then continue to next step.</li>
 		</ol>
 	<li>Unzip the downloaded file.</li>
-	<li>Copy the contents of each of the "config" files from the respective directories into the above created ones.</li>
+	<li>Copy the contents of each of the "config" files from the respective directories into the above created ones.	</li>
 	<li> Example: Copy the file .config/i3/config to $YOUR_HOME/.config/i3/config</li>
 	</ul>
 </p>
