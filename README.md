@@ -1,5 +1,9 @@
 # i3-skyBlue-config
-config files for the a blue-themed i3 window manager.
+
+![Image1](/screenshots/1.png)
+![Image2](/screenshots/2.png)
+![Image3](/screenshots/3.png)
+
 <p>
 <b>Recommendations:</b>
 	You may change the keyboard shortcuts to suit your needs.
@@ -18,6 +22,7 @@ config files for the a blue-themed i3 window manager.
 	<li>Moka Icons ==> <a href="https://snwh.org/moka">here</a></li>
 	<li>Firefox Theme ==> <a href="https://github.com/elibroftw/matte-black-theme">here</a></li>
 	<li>Chrome Theme ==> Search "Material Theme Dark [blue-grey]"</li>
+	<li>picom(a fork of compton)
 	</ul>
 </p>
 <b>Installation</b>
@@ -27,6 +32,7 @@ config files for the a blue-themed i3 window manager.
 	<li><code># pacman -S rofi</code></li>
 	<li><code>#  pacman -S i3blocks</code></li>
 	<li><code># pacman -S feh</code></li>
+	<li><code># pacman -S picom</code></li>
 	<li><ol>
 		<li>Create a folder named ".config" in your home directory.</li>
 		<li>Inside this folder, create 4 sub-directories- "i3", "i3status", "i3blocks", "rofi".</li>
