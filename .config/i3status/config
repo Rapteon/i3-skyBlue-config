@@ -1,5 +1,6 @@
 #Customized by Rapteon; Date: 2019-12-28
 
+#Uncomment the widgets which you require.
 
 # i3status configuration file.
 # see "man i3status" for documentation.
@@ -24,7 +25,7 @@ order += "wireless _first_"
 order += "battery all"
 order += "disk /"
 #order += "load"
-order += "memory"
+#order += "memory"
 order += "tztime local"
 
 wireless _first_ {
@@ -55,11 +56,11 @@ disk "/" {
 #        format = "%1min"
 #}
 
-memory {
-        format = "%used"
-        threshold_degraded = "1G"
-        format_degraded = "MEMORY < %available"
-}
+#memory {
+#        format = "%used"
+#        threshold_degraded = "1G"
+#        format_degraded = "MEMORY < %available"
+#}
 
 tztime local {
         format = "%d-%m-%Y %H:%M"
