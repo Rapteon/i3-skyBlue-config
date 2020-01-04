@@ -1,5 +1,44 @@
-[simple]
-full_text=This is a long text white on red text
-short_text=Short Text
-background=#FF0000
-color=#FFFFFF
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+#Customized by rapteon; Date: 2019-12-28
+#To use "battery2", "caps-lock" and "wifi" blocks, download them from https://github.com/vivien/i3blocks-contrib.
+#     Then set the path to the downloaded location.
+#To use the calendar block, replace gsimplecal with calendar/widget of your choice.
+
+
+separator=true
+# Global properties
+separator_block_width=20
+
+[time]
+full_text=Now
+command=date '+%d-%m-%Y %H:%M:%S'
+color=#b0d7ff
+interval=1
+
+#[battery2]
+#full_text=Battery
+#command=/home/jarus/.config/i3blocks/i3blocks-contrib-master/battery2/battery2
+#markup=pango
+#interval=1
+
+#[calendar]
+#full_text=Calendar
+#command=gsimplecal
+#interval=none
+
+#[caps-lock]
+#command=xset -q | grep Caps | awk '{ print $2, $3, $4 }'
+#interval=once
+#signal=10
+
+#[wifi]
+#command=/home/jarus/.config/i3blocks/i3blocks-contrib-master/wifi/wifi
+#label=wifi:
+#INTERFACE=wlp3s0
+#interval=60
