@@ -24,6 +24,7 @@
 	<li>Chrome Theme ==> Search "Material Theme Dark [blue-grey]"</li>
 	<li>picom(a fork of compton)
 	</ul>
+<b>+ useful tips.</b>
 </p>
 <b>Installation</b>
 	<ul>
