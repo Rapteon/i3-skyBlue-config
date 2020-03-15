@@ -1,0 +1,98 @@
+################################################################################################################################################
+Pre-Installation
+################################################################################################################################################
+
+#SSD Tips before installation
+https://wiki.debian.org/SSDOptimization#Basics
+
+
+################################################################################################################################################
+Post-Installation
+################################################################################################################################################
+
+#To set resolution, 
+xrandr -s 1920x1080
+
+
+#Brightness control
+xbacklight -set <percentage of max brightness> //e.g. 50 means 50 % of maximum brightness
+
+xbacklight -inc 10 //Increases brightness by 10%
+
+xbacklight -dec 10 //Decreases brightness by 10%
+
+
+#Night Light
+redshift -O 4500K //4500K for night, 6500K for day.
+
+#Touchpad Settings
+1.	sudo libinput list-devices
+2.	sudo xinput list
+3.	sudo xinput list-props device //here 'device' is the device number corresponding to the device name in the ssecond command.
+4.	sudo xinput set-prop device option setting	//option corresponds to the option number in the list from command 2, property can be set using the current values in the list obtained from command 2.
+ Example: sudo xinput set-prop 14 307 1
+
+#USB/Hard-Drives
+
+#By default, drives will be mounted at /run/media/<username>/<driveName>
+# To mount
+udisksctl mount -b <device path> //where devicepath is found by typing 'lsblk' in a separate terminal
+
+#To Unmount
+udisksctl unmount -b <device path>
+
+
+################################################################################################################################################
+Networks
+################################################################################################################################################
+#Network-Manager wifi Connection
+nmcli device wifi connect <SSID here> password <password here>
+
+#Turn-off WiFi
+nmcli radio wifi off
+
+#Show state of device
+nmcli device
+
+#Disconnect an interface
+nmcli disconnect ifname <interface name>
+
+#Reconnect interface marked as disconnected
+nmcli connection up uuid <UUID>
+
+##############################################################################################################################
+#Sound Controls
+##############################################################################################################################
+alsamixer -c 0
+#            |
+#            is the device number
+
+
+#In case your PC hangs, this sequence can be used for safely rebooting
+
+REISUB = Raising Elephants Is So Utterly Boring
+
+1. Press Alt + SysRq + R	//Takes keyboard control back from the X
+2. Press Alt + SysRq + E	//Sends SIGTERM to all processes so that they terminate gracefully
+3. Press Alt + SysRq + I	//Sends SIGKILL to all processes (except init) so that they terminate immediately
+4. Press Alt + SysRq + S	//Flush data to Disk
+5. Press Alt + SysRq + U	//Remount filesystems in Read-Only Mode
+6. Press Alt + SysRq + B	//Reboot
+
+#Taking screenshots using mouse
+scrot -s -b
+
+#Storage used by various items in a directory
+ncdu	#Requires ncdu package
+
+#To list hardware info
+lshw	#run as root
+
+#Updating the bootloader(GRUB) after every kernel upgrade
+grub-mkconfig -o /boot/grub/grub.cfg
+#If you have unwanted OS entries in the boot menu, they can be removed using the following.
+efibootmgr -v	#Lists the boot entries. Find the entry which you want to delete and note down its number
+efibootmgr -b <number> -B	#Deletes the boot entry with id <number>
+
+#Cleaning package cache using paccache timer. This performs 'paccache -r' every week.
+systemctl start paccache.timer
