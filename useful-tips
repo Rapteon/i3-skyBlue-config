@@ -96,3 +96,8 @@ efibootmgr -b <number> -B	#Deletes the boot entry with id <number>
 
 #Cleaning package cache using paccache timer. This performs 'paccache -r' every week.
 systemctl start paccache.timer
+
+#Archiving files using the 'tar' utility.
+tar -cvf <filename> <file/directory to archive>
+#Decompresing 'tar' files.
+tar -xvf <archiveName>
