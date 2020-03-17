@@ -101,3 +101,17 @@ systemctl start paccache.timer
 tar -cvf <filename> <file/directory to archive>
 #Decompresing 'tar' files.
 tar -xvf <archiveName>
+
+#Loop Devices
+#Mounting
+#1.Create an ISO file using 'dd'
+dd if=/dev/zero of=</path/to/your/place/filename.iso> bs=4096 count=400
+#2.Create a loop device. This will produce a file in /dev named loop<number>.
+udisksctl loop-setup -r -f <imageName>.iso
+#3.Setup loop device
+losetup -f	#Displays available loop devices.
+losetup /dev/loop<number> </directory/to/mount>
+#4.Making the filesystem on the device.
+mkfs -t <typeOfFilesystem> /dev/loop<number>
+#5.Mounting the filsystem in user directory.
+mount -t <typeOfFilesystem> /dev/loop<number> </directory/to/mount>
