@@ -283,5 +283,3 @@ exec picom -D 3
 #Screenshot(stored in home folder)
 bindsym --release Print exec --no-startup-id scrot -sb
 
-#Hiding borders adjacent to screen edges
-hide_edge_borders smart
