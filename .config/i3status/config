@@ -55,16 +55,16 @@ disk "/" {
         format = "%free"
 }
 
-#load {
-#        format = "%1min"
-#}
+load {
+        format = " %1min"
+}
 
-#memory {
-#        format = "%used"
-#        threshold_degraded = "1G"
-#        format_degraded = "MEMORY < %available"
-#}
+memory {
+        format = "%used"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
+}
 
 tztime local {
-        format = "%d-%m-%Y %H:%M"
+        format = " %H:%M | %d-%m-%Y" 
 }
