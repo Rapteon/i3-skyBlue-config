@@ -214,7 +214,7 @@ bar {
 
         #Custom colors and bar position
         position top
-	      font pango:monospace Regular 10
+	      font pango:DejaVu Sans 10
         colors {
 		background #00000
 		separator $urgent-bg-color
