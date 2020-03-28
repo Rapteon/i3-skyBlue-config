@@ -246,7 +246,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 #exec --no-startup-id feh --bg-fill /home/jarus/Wallpapers/wallpaper.jpg
 
 #Setting DPI of Display
-exec --no-startup-id xrandr --dpi 125
+#exec --no-startup-id xrandr --dpi 125
 
 #Audio Controls
 bindcode XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
