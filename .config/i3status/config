@@ -20,18 +20,18 @@ general {
 }
 
 #order += "ipv6"
-order += "wireless _first_"
+#order += "wireless _first_"
 #order += "ethernet _first_"
-order += "battery all"
-order += "disk /"
-#order += "load"
-#order += "memory"
 order += "tztime local"
+order += "battery all"
+#order += "memory"
+#order += "disk /"
+order += "load"
 
-wireless _first_ {
-        format_up = ": %essid "
-        format_down = "W: down"
-}
+#wireless _first_ {
+#        format_up = ": %essid "
+#        format_down = "W: down"
+#}
 
 #ethernet _first_ {
 #        format_up = "E: %ip (%speed)"
