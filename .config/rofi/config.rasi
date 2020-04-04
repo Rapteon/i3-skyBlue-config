@@ -1,6 +1,14 @@
 /**Customized by Rapteon; Date: 2019-01-04**/
 
-
+/**
+	Hint:
+	Change the values in the first block of variables(below) before...
+	...individually changing values in the components.
+	
+	'lightbg' changes the border color and the text color.
+	'background-color' changes the background color of the floating box.
+	'selected-normal-background' changes the text-color of the focused item.
+**/
 /**
  * rofi -dump-theme output.
  * Rofi version: 1.5.4
@@ -8,7 +16,7 @@
 * {
     red:                         rgba ( 220, 50, 47, 100 % );
     selected-active-foreground:  var(background);
-    lightfg:                     rgba ( 45, 49, 66, 100 % );
+    lightfg:                     rgba ( 176, 215, 255, 100 % );
     separatorcolor:              var(foreground);
     urgent-foreground:           var(red);
     alternate-urgent-background: var(lightbg);
@@ -16,7 +24,7 @@
     spacing:                     2;
     border-color:                var(lightbg);
     normal-background:           var(background);
-    background-color:            rgba ( 247, 175, 157, 100 % );
+    background-color:            rgba ( 255, 255, 255, 100 % );
     alternate-active-background: var(lightbg);
     active-foreground:           var(blue);
     blue:                        rgba ( 173, 172, 181, 100 % );
@@ -34,13 +42,13 @@
     normal-foreground:           var(foreground);
     alternate-urgent-foreground: var(red);
     selected-normal-background:  var(lightfg);
-    font:                        "monospace bold 12";
+    font:                        "DejaVu Sans 12";
 }
 window {
     padding:          5;
     background-color: var(background);
-    border:           4;
-    border-radius:    4px;
+    border:           2;
+    border-radius:    12px;
     fullscreen:	      false;
     transparency:     "screenshot";
     width:            30%;
@@ -48,6 +56,7 @@ window {
 mainbox {
     padding: 10;
     border:  0;
+    border-radius: 10px;
 }
 message {
     padding:      2px 0px 0px ;
@@ -58,6 +67,8 @@ message {
 }
 textbox {
     text-color: var(foreground);
+    border-radius:10px;
+    padding: 10px 10px 10px;
 }
 listview {
     padding:      2px 0px 0px ;
