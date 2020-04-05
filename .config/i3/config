@@ -9,7 +9,8 @@
 #Screenshot tool can be called from shortcut key Print/PrintScr at line #284
 
 
-
+#To verify of the above line numbers hold true, check last line containing a '#'.
+#Presently it is at line number 290 
 
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
@@ -285,3 +286,5 @@ bindsym --release Print exec --no-startup-id scrot -sb
 
 #Hiding borders adjacent to screen edges
 hide_edge_borders smart
+
+#
