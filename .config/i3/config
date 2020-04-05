@@ -235,8 +235,8 @@ bar {
 ##			Begins...
 
 
-#Lock i3 using i3lock
-bindsym $mod+Shift+x exec i3lock -c '$lockscreen-bg-color'
+#Lock i3 using i3lock-color
+bindsym $mod+Shift+x exec --no-startup-id i3lock -k --timecolor=ffffffff --datecolor=ffffffff --veriftext="..." --noinputtext="Blank" -B=12 --pass-screen-keys --insidecolor=778899ff --insidevercolor=ccd6d7ff --ringcolor=cde0ecff --keyhlcolor=b7476fff
 
 #Brightness Controls
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
