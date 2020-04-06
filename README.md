@@ -45,3 +45,6 @@
 	<li> Example: Copy the file .config/i3/config to $YOUR_HOME/.config/i3/config</li>
 	</ul>
 </p>
+<p>
+Wallpaper Credit: Photo by Kumiko SHIMIZU on Unsplash
+</p>
