@@ -121,3 +121,6 @@ convert <imag1>.jpeg <imag2>.jpg <pdfName>.pdf
 
 #Combining multiple pdfs. 'out.pdf' is the name of the combined pdf. It must be present. Rename it later. 
 pdfunite <pdf1>.pdf <pdf2>.pdf <pdf3>.pdf out.pdf
+
+#Screenrecording using recordmydesktop
+recordmydesktop --full-shots --fps 30  --s_quality 10 -o <filename>.ogv
