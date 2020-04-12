@@ -124,3 +124,14 @@ pdfunite <pdf1>.pdf <pdf2>.pdf <pdf3>.pdf out.pdf
 
 #Screenrecording using recordmydesktop
 recordmydesktop --full-shots --fps 30  --s_quality 10 -o <filename>.ogv
+
+
+#VirtualBox Tips(assuming you have VirtualBox installed.)
+##################  Using Host webcam  ##################
+#Install VirtualBox Extension Pack from their website
+#...In case of any errors while installing that, search online.
+#Then using your terminal, list the webcams. (For the meaning of the output, refer this: https://www.virtualbox.org/manual/ch09.html#webcam-passthrough )
+#The first field of the output will be the alias name of the webcam. You will need to check for correct alias, if multiple devices are listed.(Search online.)
+VBoxManage list webcams
+#Then attach the webcam to the VM
+VBoxManage controlvm <VM_Name> webcam attach <webcam alias>
