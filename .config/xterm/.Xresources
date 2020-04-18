@@ -1,0 +1,23 @@
+! Customized by rapteon.
+
+!Increasing color support for xterm
+xterm*termName: xterm-256color
+
+!Setting locale
+xterm*locale: true
+
+!Making sure that the alt & backspace keys work properly.
+xterm*metaSendsEscape: true
+xterm*backarrowKey: false
+xterm*ttyModes: erase ^?
+
+!Allowing clipboard copy
+xterm.vt100.selectToClipboard: on
+
+!Colors
+xterm*foreground: rgb:b0/d7/ff
+xterm*background: rgb:00/00/00
+
+!Fonts
+xterm*faceName: DejaVu Sans Mono
+xterm*faceSize: 10
