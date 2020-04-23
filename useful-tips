@@ -102,7 +102,9 @@ tar -cvf <filename> <file/directory to archive>
 #Decompresing 'tar' files.
 tar -xvf <archiveName>
 
-#Loop Devices
+################################################################################################################################################
+Loop Devices
+################################################################################################################################################
 #Mounting
 #1.Create an ISO file using 'dd'
 dd if=/dev/zero of=</path/to/your/place/filename.iso> bs=4096 count=400
@@ -125,9 +127,11 @@ pdfunite <pdf1>.pdf <pdf2>.pdf <pdf3>.pdf out.pdf
 #Screenrecording using recordmydesktop
 recordmydesktop --full-shots --fps 30  --s_quality 10 -o <filename>.ogv
 
+################################################################################################################################################
+VirtualBox Tips(assuming you have VirtualBox installed.)
+################################################################################################################################################
 
-#VirtualBox Tips(assuming you have VirtualBox installed.)
-##################  Using Host webcam  ##################
+################## Using Host webcam ##################
 #Install VirtualBox Extension Pack from their website
 #...In case of any errors while installing that, search online.
 #Then using your terminal, list the webcams. (For the meaning of the output, refer this: https://www.virtualbox.org/manual/ch09.html#webcam-passthrough )
@@ -135,3 +139,12 @@ recordmydesktop --full-shots --fps 30  --s_quality 10 -o <filename>.ogv
 VBoxManage list webcams
 #Then attach the webcam to the VM
 VBoxManage controlvm <VM_Name> webcam attach <webcam alias>
+
+
+################################################################################################################################################
+Software Development
+################################################################################################################################################
+
+#Viewing object files
+#This command disassembles the object file into assembly code and stores it into a separate file named 'file.asm'.
+objdump -d <filename.o> > file.asm
