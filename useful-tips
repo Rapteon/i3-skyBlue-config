@@ -146,5 +146,5 @@ Software Development
 ################################################################################################################################################
 
 #Viewing object files
-#This command disassembles the object file into assembly code and stores it into a separate file named 'file.asm'.
-objdump -d <filename.o> > file.asm
+#This command disassembles the object file into assembly code and stores it into a separate file named 'file'.
+objdump -d <filename.o> > file
