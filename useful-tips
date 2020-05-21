@@ -10,11 +10,11 @@ https://wiki.debian.org/SSDOptimization#Basics
 Post-Installation
 ################################################################################################################################################
 
-#To set resolution, 
+#To set resolution. Change with required resolution. Requires xorg-xrandr
 xrandr -s 1920x1080
 
 
-#Brightness control
+#Brightness control. Requires 'xorg-xbacklight' package.
 xbacklight -set <percentage of max brightness> //e.g. 50 means 50 % of maximum brightness
 
 xbacklight -inc 10 //Increases brightness by 10%
@@ -22,10 +22,11 @@ xbacklight -inc 10 //Increases brightness by 10%
 xbacklight -dec 10 //Decreases brightness by 10%
 
 
-#Night Light
+#Night Light. Requires 'redshift' package.
 redshift -O 4500K //4500K for night, 6500K for day.
 
-#Touchpad Settings
+#Touchpad Settings. Requires libinput and xorg-xinput.
+#NOTE: Configuration resets after reboot.
 1.	sudo libinput list-devices
 2.	sudo xinput list
 3.	sudo xinput list-props device //here 'device' is the device number corresponding to the device name in the ssecond command.
@@ -41,25 +42,35 @@ udisksctl mount -b <device path> //where devicepath is found by typing 'lsblk' i
 #To Unmount
 udisksctl unmount -b <device path>
 
-
 ################################################################################################################################################
-Networks
+Networks/Wireless
 ################################################################################################################################################
-#Network-Manager wifi Connection
+#Network-Manager wifi Connection. Requires 'networkmanager' package.
+###Connect to Wifi
 nmcli device wifi connect <SSID here> password <password here>
-
-#Turn-off WiFi
+###Turn-off WiFi
 nmcli radio wifi off
-
-#Show state of device
+###Show state of device
 nmcli device
-
-#Disconnect an interface
+###Disconnect an interface
 nmcli disconnect ifname <interface name>
-
-#Reconnect interface marked as disconnected
+###Reconnect interface marked as disconnected
 nmcli connection up uuid <UUID>
 
+#Manage Wifi using wpa_supplicant. Requires 'wpa_supplicant' package.
+1.	systemctl enable wpa_supplicant.service
+2.	systemctl start wpa_supplicant.service
+3.	ip link		#to view the name of the wireless interface. If it's DOWN, then set to UP.
+4.	echo "ctrl_interface=/run/wpa_supplicant\nupdate_config=1" > /etc/wpa_supplicant/wpa_supplicant.conf
+5.	wpa_supplicant -B -i <interface_name> -c /etc/wpa_supplicant/wpa_supplicant.conf
+6.	wpa_cli -i <interface_name>	#Will open a wpa_cli shell. Run remaining commands in here.
+7.	scan
+8.	scan_results
+9.	add_network	#Will output a number
+10.	set_network <number> ssid "nameOfWifi"
+11. 	set_network <number> psk "yourPassword"
+12.	enable_network <number>
+13.	save_config
 ##############################################################################################################################
 #Sound Controls
 ##############################################################################################################################
@@ -67,8 +78,18 @@ alsamixer -c 0
 #            |
 #            is the device number
 
+##############################################################################################################################
+Keyboard Special Keys
+##############################################################################################################################
 
-#In case your PC hangs, this sequence can be used for safely rebooting
+#Install the 'sxhkd' package.
+#Will work. Mostly.
+
+################################################################################################################################################
+Miscellaneous
+################################################################################################################################################
+
+#In case your PC hangs, this sequence can be used for safely rebooting. For this to work, some additional steps need to be performed. See your window manager/desktop environment manual.
 
 REISUB = Raising Elephants Is So Utterly Boring
 
@@ -79,14 +100,6 @@ REISUB = Raising Elephants Is So Utterly Boring
 5. Press Alt + SysRq + U	//Remount filesystems in Read-Only Mode
 6. Press Alt + SysRq + B	//Reboot
 
-#Taking screenshots using mouse
-scrot -s -b
-
-#Storage used by various items in a directory
-ncdu	#Requires ncdu package
-
-#To list hardware info
-lshw	#run as root
 
 #Updating the bootloader(GRUB) after every kernel upgrade
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -95,6 +108,7 @@ efibootmgr -v	#Lists the boot entries. Find the entry which you want to delete a
 efibootmgr -b <number> -B	#Deletes the boot entry with id <number>
 
 #Cleaning package cache using paccache timer. This performs 'paccache -r' every week.
+#Requires 'pacman-contrib' package.
 systemctl start paccache.timer
 
 #Archiving files using the 'tar' utility.
@@ -118,29 +132,6 @@ mkfs -t <typeOfFilesystem> /dev/loop<number>
 #5.Mounting the filsystem in user directory.
 mount -t <typeOfFilesystem> /dev/loop<number> </directory/to/mount>
 
-#Converting jpeg images to pdf. Works with any number of images.
-convert <imag1>.jpeg <imag2>.jpg <pdfName>.pdf
-
-#Combining multiple pdfs. 'out.pdf' is the name of the combined pdf. It must be present. Rename it later. 
-pdfunite <pdf1>.pdf <pdf2>.pdf <pdf3>.pdf out.pdf
-
-#Screenrecording using recordmydesktop
-recordmydesktop --full-shots --fps 30  --s_quality 10 -o <filename>.ogv
-
-################################################################################################################################################
-VirtualBox Tips(assuming you have VirtualBox installed.)
-################################################################################################################################################
-
-################## Using Host webcam ##################
-#Install VirtualBox Extension Pack from their website
-#...In case of any errors while installing that, search online.
-#Then using your terminal, list the webcams. (For the meaning of the output, refer this: https://www.virtualbox.org/manual/ch09.html#webcam-passthrough )
-#The first field of the output will be the alias name of the webcam. You will need to check for correct alias, if multiple devices are listed.(Search online.)
-VBoxManage list webcams
-#Then attach the webcam to the VM
-VBoxManage controlvm <VM_Name> webcam attach <webcam alias>
-
-
 ################################################################################################################################################
 Software Development
 ################################################################################################################################################
@@ -151,3 +142,36 @@ objdump -d <filename.o> > file
 
 #Viewing symbol table of a binary file
 nm <filename>
+
+################################################################################################################################################
+Applications
+################################################################################################################################################
+
+#Taking screenshots using mouse
+scrot -s -b
+
+#Storage used by various items in a directory. #Requires ncdu packagey
+ncdu	
+
+#To list hardware info. Requires 'lshw' package.
+lshw	#run as root
+
+#VirtualBox Tips(assuming you have VirtualBox installed.)
+################## Using Host webcam ###################
+#Install VirtualBox Extension Pack from their website
+#...In case of any errors while installing that, search online.
+#Then using your terminal, list the webcams. (For the meaning of the output, refer this: https://www.virtualbox.org/manual/ch09.html#webcam-passthrough )
+#The first field of the output will be the alias name of the webcam. You will need to check for correct alias, if multiple devices are listed.(Search online.)
+VBoxManage list webcams
+#Then attach the webcam to the VM
+VBoxManage controlvm <VM_Name> webcam attach <webcam alias>
+
+#Converting jpeg images to pdf. Works with any number of images.
+convert <imag1>.jpeg <imag2>.jpg <pdfName>.pdf
+
+#Combining multiple pdfs. 'out.pdf' is the name of the combined pdf. It must be present. Rename it later. 
+pdfunite <pdf1>.pdf <pdf2>.pdf <pdf3>.pdf out.pdf
+
+#Screenrecording using recordmydesktop
+recordmydesktop --full-shots --fps 30  --s_quality 10 -o <filename>.ogv
+
