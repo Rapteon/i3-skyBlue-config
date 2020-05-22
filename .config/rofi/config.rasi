@@ -10,19 +10,19 @@
 	'selected-normal-background' changes the text-color of the focused item.
 	'lightbg' changes the highlight color of the list items.
 **/
-/**
+
 * {
     red:                         rgba ( 220, 50, 47, 100 % );
-    selected-active-foreground:  var(blackText);
-    lightfg:                     rgba ( 45, 49, 66, 100 % );
+    selected-active-foreground:  var(whiteText);
+    lightfg:                     rgba ( 183, 71, 111, 100 % );
     separatorcolor:              var(foreground);
     urgent-foreground:           var(red);
     alternate-urgent-background: var(lightbg);
-    lightbg:                     rgba ( 176, 215, 255, 100 % );
+    lightbg:                     rgba ( 176, 215, 255, 100 % );/**Changes the border color and the text color.**/
     spacing:                     2;
     border-color:                var(lightfg);
     normal-background:           var(background);
-    background-color:            rgba ( 255, 255, 255, 100 % );
+    background-color:            rgba(255, 255, 255, 100 %);/**Changes the background color of the floating box.**/
     alternate-active-background: var(darkerBlue);
     active-foreground:           var(lightfg);
     blue:                        rgba ( 173, 172, 181, 100 % );
@@ -32,16 +32,17 @@
     background:                  rgba ( 0, 0, 0, 0% );
     selected-normal-foreground:  var(lightfg);
     active-background:           var(background);
-    alternate-active-foreground: var(blackText);
+    alternate-active-foreground: var(whiteText);
     alternate-normal-background: var(background);
     foreground:                  rgba ( 45, 49, 66, 100 % );
     selected-urgent-background:  var(red);
     selected-urgent-foreground:  var(background);
     normal-foreground:           var(foreground);
     alternate-urgent-foreground: var(red);
-    selected-normal-background:  var(lightbg);
+    selected-normal-background:  var(lightbg);/**Changing the focused text color.**/
+    darkerBlue:			 rgba(39, 56, 214, 100 %);
     font:                        "DejaVu Sans 12";
-    blackText:			 rgba(0, 0, 0, 100 %);
+    whiteText:			 rgba(0, 0, 0, 100 %);
 }
 window {
     padding:          5;
