@@ -28,16 +28,17 @@ order += "battery all"
 #order += "memory"
 #order += "disk /"
 order += "load"
+order += "volume master"
 
-#wireless _first_ {
-#        format_up = ": %essid "
-#        format_down = "W: down"
-#}
+wireless _first_ {
+        format_up = ": %essid "
+        format_down = "W: down"
+}
 
-#ethernet _first_ {
-#        format_up = "E: %ip (%speed)"
-#        format_down = "E: down"
-#}
+ethernet _first_ {
+        format_up = "E: %ip (%speed)"
+        format_down = "E: down"
+}
 
 battery all {
         format = "%status %percentage"
@@ -68,4 +69,12 @@ memory {
 
 tztime local {
         format = " %H:%M | %A, %d %B %Y" 
+}
+
+volume master {
+        format = "♪: %volume"
+        format_muted = "♪: muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
 }
