@@ -1,20 +1,13 @@
 /**Customized by Rapteon; Date: 2019-01-04**/
 
-/**
-	Hint:
-	Change the values in the first block of variables(below) before...
-	...individually changing values in the components.
-	
-	'lightfg' changes the border color and the text color.
-	'background-color' changes the background color of the floating box.
-	'selected-normal-background' changes the text-color of the focused item.
-	'lightbg' changes the highlight color of the list items.
-**/
 
+/**
+ * rofi -dump-theme output.
+ * Rofi version: 1.5.4
+ **/
 * {
-    red:                         rgba ( 220, 50, 47, 100 % );
     selected-active-foreground:  var(whiteText);
-    lightfg:                     rgba ( 183, 71, 111, 100 % );
+    lightfg:                     rgba ( 45, 49, 66, 100 % );
     separatorcolor:              var(foreground);
     urgent-foreground:           var(red);
     alternate-urgent-background: var(lightbg);
@@ -45,10 +38,10 @@
     whiteText:			 rgba(0, 0, 0, 100 %);
 }
 window {
-    padding:          5;
+    padding:          0;
     background-color: var(background);
-    border:           2;
-    border-radius:    12px;
+    border:           0;
+    border-radius:    10px;
     fullscreen:	      false;
     transparency:     "screenshot";
     width:            30%;
@@ -56,7 +49,7 @@ window {
 mainbox {
     padding: 10;
     border:  0;
-    border-radius: 10px;
+    border-radius: 0px;
 }
 message {
     padding:      2px 0px 0px ;
