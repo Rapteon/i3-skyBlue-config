@@ -175,6 +175,10 @@ pdfunite <pdf1>.pdf <pdf2>.pdf <pdf3>.pdf out.pdf
 #Screenrecording using recordmydesktop
 recordmydesktop --full-shots --fps 30  --s_quality 10 -o <filename>.ogv
 
+###################Broken Updates#######################
+sudo rm -R /var/lib/pacman/sync
+sudo pacman -Syu
+
 ################################################################################################################################################
 # ArchLabs Specific
 # In case you decide to switch to ArchLabs OS instead of Arch and you ever face with the issue of broken updates, try this.
