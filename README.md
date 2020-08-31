@@ -9,7 +9,7 @@
 	I have provided configuration files for both (dmenu and roxi) && (i3status and i3blocks).
 	*You only need one from each, i.e one of dmenu/roxi and one of i3status/i3blocks*
 
-### These are the dependencies for the best experience:
+### These are the dependencies for best experience:
 
 	*	dmenu  
 	*	i3status
@@ -22,6 +22,7 @@
 	*	Firefox Theme ==> <a href="https://github.com/elibroftw/matte-black-theme">here</a>
 	*	Chrome Theme ==> Search "Material Theme Dark [blue-grey]"
 	*	picom(a fork of compton)
+        *       xss-lock (to automatically lock the screen upon inactivity)
 	*	Some useful tips included. Take a look in case you are using ArchLinux.
 
 ## Installation(on ArchLinux)
@@ -37,6 +38,8 @@
 `pacman -S feh`
 
 `pacman -S picom`
+
+`pacman -S xss-lock`
 	
 +	Create a folder named ".config" in your home directory.
 +	Inside this folder, create 4 sub-directories- "i3", "i3status", "i3blocks", "rofi".
