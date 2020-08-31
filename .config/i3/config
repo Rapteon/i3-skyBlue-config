@@ -1,16 +1,16 @@
 #Customized by Rapteon; DATE: 2019-12-28
 
 #Instructions:
-#You can enable the welcome message "Hello, <username>" by uncommenting line 279. Requires Rofi.
+#You can enable the welcome message "Hello, <username>" by uncommenting line #280. Requires Rofi.
 #To enable Dmenu, uncomment line #70
 #To enable Rofi, uncomment line #71
-#Mouse shortcuts begin from line #274
-#Change path to set your wallpaper at line #247 (requires 'feh' image viewer)
-#Screenshot tool can be called from shortcut key Print/PrintScr at line #285
+#Mouse shortcuts begin from line #275
+#Change path to set your wallpaper at line #248 (requires 'feh' image viewer)
+#Screenshot tool can be called from shortcut key Print/PrintScr at line #286
 
 
 #To verify if the above line numbers hold true, check last line containing a '#'.
-#Presently it is at line number 290 
+#Presently it is at line number 291 
 
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
