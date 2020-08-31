@@ -50,7 +50,7 @@ font pango:DejaVu Sans Mono 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --force-clock --timecolor=ffffffff --datecolor=ffffffff --veriftext="..." --noinputtext="___" --wrongtext=" ! " --color=000000aa --blur=20 --pass-screen-keys --insidecolor=778899ff --insidevercolor=ccd6d7ff --ringcolor=cde0ecff --keyhlcolor=b7476fff
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -237,7 +237,8 @@ bar {
 
 
 #Lock i3 using i3lock-color
-bindsym $mod+Shift+x exec --no-startup-id i3lock -k --timecolor=ffffffff --datecolor=ffffffff --veriftext="..." --noinputtext="___" -B=12 --pass-screen-keys --insidecolor=778899ff --insidevercolor=ccd6d7ff --ringcolor=cde0ecff --keyhlcolor=b7476fff
+bindsym $mod+Shift+x exec --no-startup-id i3lock --force-clock --timecolor=ffffffff --datecolor=ffffffff --veriftext="..." --noinputtext="___" --wrongtext=" ! " --color=000000aa --blur=20 --pass-screen-keys --insidecolor=778899ff --insidevercolor=ccd6d7ff --ringcolor=cde0ecff --keyhlcolor=b7476fff
+
 
 #Brightness Controls
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
